@@ -20,8 +20,8 @@ class Locale {
 
     Vue.util.defineReactive({}, null, data.lang)
 
-    Vue.prototype.$lang = function (path) {
-      return translate(data.locales, data.lang.value, path) || path
+    Vue.prototype.$lang = function (path, repls) {
+      return translate(data.locales, data.lang.value, path, repls) || path
     }
 
     Vue.prototype.$lang.change = this.change.bind(this)

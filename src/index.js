@@ -3,8 +3,17 @@ import { translate } from './translator'
 var Vue
 
 var data = {
-  lang: { value: '' },
-  locales: {}
+  _lang: { value: '' },
+
+  locales: {},
+
+  get lang () {
+    return this._lang.value
+  },
+
+  set lang (value) {
+    this._lang.value = value
+  }
 }
 
 class Locale {
@@ -15,16 +24,16 @@ class Locale {
       )
     }
 
-    data.lang.value = lang
+    data.lang = lang
     data.locales = locales
 
-    Vue.util.defineReactive({}, null, data.lang)
+    Vue.util.defineReactive({}, null, data._lang)
 
     Vue.prototype.$lang = function (path, repls) {
       // search for the path 'locally'
-      return translate(this.$options.locales, data.lang.value, path, repls)
+      return translate(this.$options.locales, data.lang, path, repls)
         // search for the path 'globally'
-        || translate(data.locales, data.lang.value, path, repls)
+        || translate(data.locales, data.lang, path, repls)
         // if the path does not exist, return the path
         || path
     }
@@ -33,9 +42,9 @@ class Locale {
   }
 
   change (lang) {
-    if (data.lang.value === lang) return
+    if (data.lang === lang) return
 
-    data.lang.value = lang
+    data.lang = lang
   }
 }
 

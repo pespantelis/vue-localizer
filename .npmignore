@@ -3,5 +3,6 @@
 .editorconfig
 .npmignore
 demo/
+test/
 index.html
 webpack.config.js

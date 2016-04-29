@@ -26,7 +26,7 @@ describe('search', () => {
     expect(translate(null, 'langA', 'a')).to.not.exist
   })
 
-  it('returns undefined, if the path does not exits', () => {
+  it('returns undefined, if the path does not exist', () => {
     expect(translate(locales, 'langA', 'b.c.d')).to.not.exist
   })
 

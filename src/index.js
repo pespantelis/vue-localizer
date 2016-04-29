@@ -17,7 +17,7 @@ var data = {
 }
 
 class Locale {
-  constructor (locales, lang = 'en') {
+  constructor (locales = {}, lang = 'en') {
     if (!Locale.installed) {
       throw new Error(
         'Please install the VueLocale with Vue.use() before creating an instance.'

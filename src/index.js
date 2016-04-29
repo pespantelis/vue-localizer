@@ -44,7 +44,19 @@ class Locale {
   change (lang) {
     if (data.lang === lang) return
 
+    this._before && this._before(data.lang)
+
     data.lang = lang
+
+    this._after && this._after(data.lang)
+  }
+
+  beforeChange (fn) {
+    this._before = fn
+  }
+
+  afterChange (fn) {
+    this._after = fn
   }
 }
 

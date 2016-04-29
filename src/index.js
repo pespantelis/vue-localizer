@@ -21,7 +21,12 @@ class Locale {
     Vue.util.defineReactive({}, null, data.lang)
 
     Vue.prototype.$lang = function (path, repls) {
-      return translate(data.locales, data.lang.value, path, repls) || path
+      // search for the path 'locally'
+      return translate(this.$options.locales, data.lang.value, path, repls)
+        // search for the path 'globally'
+        || translate(data.locales, data.lang.value, path, repls)
+        // if the path does not exist, return the path
+        || path
     }
 
     Vue.prototype.$lang.change = this.change.bind(this)

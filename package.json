@@ -12,7 +12,7 @@
     "internationalization",
     "i18n"
   ],
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/pespantelis/vue-localizer.git"
@@ -22,6 +22,7 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base demo/ --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "compile": "babel -d dist/ src/",
     "test": "karma start test/karma.conf.js"
   },
   "dependencies": {

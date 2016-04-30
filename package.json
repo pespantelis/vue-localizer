@@ -1,7 +1,24 @@
 {
-  "name": "",
-  "description": "",
+  "name": "vue-localizer",
+  "version": "1.0.0",
   "author": "Pantelis Peslis <pespantelis@gmail.com>",
+  "license": "MIT",
+  "description": "Localization plugin for Vue.js",
+  "keywords": [
+    "vue",
+    "localizer",
+    "locale",
+    "localization",
+    "internationalization",
+    "i18n"
+  ],
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pespantelis/vue-localizer.git"
+  },
+  "bugs": "https://github.com/pespantelis/vue-localizer/issues",
+  "homepage": "http://pespantelis.github.io/vue-localizer/",
   "scripts": {
     "dev": "webpack-dev-server --content-base demo/ --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",

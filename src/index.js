@@ -16,11 +16,11 @@ var data = {
   }
 }
 
-class Locale {
+class Localizer {
   constructor (locales = {}, lang = 'en') {
-    if (!Locale.installed) {
+    if (!Localizer.installed) {
       throw new Error(
-        'Please install the VueLocale with Vue.use() before creating an instance.'
+        'Please install the Localizer with Vue.use() before creating an instance.'
       )
     }
 
@@ -60,11 +60,11 @@ class Locale {
   }
 }
 
-Locale.installed = false
+Localizer.installed = false
 
-Locale.install = (vue) => {
+Localizer.install = (vue) => {
   Vue = vue
-  Locale.installed = true
+  Localizer.installed = true
 }
 
-export default Locale
+export default Localizer

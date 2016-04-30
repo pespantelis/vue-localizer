@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Localizer | Vue.js</title>
+    <link href='https://fonts.googleapis.com/css?family=Courgette|Roboto+Slab&amp;subset=latin,greek' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.0.23/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+  </head>
+  <body>
+    <section class="hero hero-top">
+      <div class="hero-content">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-6">
+              <p class="notification">
+                Any component responds to its own template, style and script..
+                <br><br>
+                But it also requires its own locales!
+              </p>
+            </div>
+            <div class="column is-4 is-offset-2 has-text-right">
+              <h1 class="title">
+                Localizer
+              </h1>
+              <h2 class="subtitle">
+                Localization plugin for Vue.js
+              </h2>
+              <iframe src="https://ghbtns.com/github-btn.html?user=pespantelis&amp;repo=vue-localizer&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="78px" height="20px"></iframe>
+              <a href="https://twitter.com/share" class="twitter-share-button" data-text="Localizer - A @vuejs plugin" data-via="pespantelis">Tweet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero hero-title">
+      <div class="hero-content">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Give it a try
+          </h1>
+          <button class="button" :class="{'is-info': selected=='en'}" @click="change('en')">English</button>
+          <button class="button" :class="{'is-info': selected=='el'}" @click="change('el')">Ελληνικά</button>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns global">
+          <div class="column">
+            <article class="notification is-warning">
+              <div class="content">
+                <p class="title">Main Vue Instance</p>
+                <ul>
+                  <li>
+                    <code>$lang('color')</code>
+                    <P>&#8618; {{ $lang('color') }}</P>
+                  </li>
+                  <li>
+                    <code>$lang('name.last')</code>
+                    <P>&#8618; {{ $lang('name.last') }}</P>
+                  </li>
+                  <li>
+                    <code>$lang('number.list', ['1','3'])</code>
+                    <P>&#8618; {{ $lang('number.list', ['1','3']) }}</P>
+                  </li>
+                  <li>
+                    <code>$lang('path.does.not.exist')</code>
+                    <P>&#8618; {{ $lang('path.does.not.exist') }}</P>
+                  </li>
+                </ul>
+                <pre>{{ $options.locales | json }}</pre>
+              </div>
+            </article>
+          </div>
+          <div class="column">
+            <child></child>
+          </div>
+          <div class="column">
+            <article class="notification is-info">
+              <div class="content">
+                <p class="title">Global Locales</p>
+                <pre>{{ globalLocales | json }}</pre>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <iframe src="https://ghbtns.com/github-btn.html?user=pespantelis&amp;type=follow" frameborder="0" scrolling="0" width="136px" height="20px"></iframe>
+          <a class="twitter-follow-button" href="https://twitter.com/pespantelis" data-show-count="false">Follow @pespantelis</a>
+        </div>
+      </div>
+    </footer>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script src="build/build.js"></script>
+  </body>
+</html>

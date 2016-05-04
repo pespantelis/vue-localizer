@@ -38,7 +38,10 @@ class Localizer {
         || path
     }
 
-    Vue.prototype.$lang.change = this.change.bind(this)
+    Object.assign(Vue.prototype.$lang, {
+      change: this.change,
+      get: () => data.lang
+    })
   }
 
   change (lang) {

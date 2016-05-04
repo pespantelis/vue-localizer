@@ -12,7 +12,7 @@ var replace = function replace(entry, repls) {
   if (!repls) return entry;
 
   return entry.replace(/{(\w+)}/g, function (match, index) {
-    return repls[index] ? repls[index] : match;
+    return repls[index] !== undefined ? repls[index] : match;
   });
 };
 

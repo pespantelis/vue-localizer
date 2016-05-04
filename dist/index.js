@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _assign = require('babel-runtime/core-js/object/assign');
+
+var _assign2 = _interopRequireDefault(_assign);
+
 var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
@@ -56,7 +60,12 @@ var Localizer = function () {
        || path;
     };
 
-    Vue.prototype.$lang.change = this.change.bind(this);
+    (0, _assign2.default)(Vue.prototype.$lang, {
+      change: this.change,
+      get: function get() {
+        return data.lang;
+      }
+    });
   }
 
   (0, _createClass3.default)(Localizer, [{

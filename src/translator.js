@@ -8,7 +8,9 @@ var replace = (entry, repls) => {
   if (!repls) return entry
 
   return entry.replace(/{(\w+)}/g, (match, index) => {
-    return repls[index] ? repls[index] : match
+    return repls[index] !== undefined
+      ? repls[index]
+      : match
   })
 }
 

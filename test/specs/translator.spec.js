@@ -41,11 +41,13 @@ describe('replace', () => {
   })
 
   it('replaces with list params', () => {
+    translate(locales, 'langC', 'a', [0,1]).should.equal('foo 0 baz 1')
     translate(locales, 'langC', 'a', ['bar','qux']).should.equal('foo bar baz qux')
     translate(locales, 'langC', 'a', ['bar']).should.equal('foo bar baz {1}')
   })
 
   it('replaces with named params', () => {
+    translate(locales, 'langC', 'b', {a:0,b:1}).should.equal('foo 0 baz 1')
     translate(locales, 'langC', 'b', {a:'bar',b:'qux'}).should.equal('foo bar baz qux')
     translate(locales, 'langC', 'b', {b:'bar',a:'qux'}).should.equal('foo qux baz bar')
     translate(locales, 'langC', 'b', {c:'bar',b:'qux'}).should.equal('foo {a} baz qux')

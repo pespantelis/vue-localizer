@@ -1,6 +1,6 @@
 {
   "name": "vue-localizer",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "Pantelis Peslis <pespantelis@gmail.com>",
   "license": "MIT",
   "description": "Localization plugin for Vue.js",

@@ -41,8 +41,8 @@
           <h1 class="title">
             Give it a try
           </h1>
-          <button class="button" :class="{'is-info': selected=='en'}" @click="change('en')">English</button>
-          <button class="button" :class="{'is-info': selected=='el'}" @click="change('el')">Ελληνικά</button>
+          <button class="button" :class="isSelected('en')" @click="change('en')">English</button>
+          <button class="button" :class="isSelected('el')" @click="change('el')">Ελληνικά</button>
         </div>
       </div>
     </section>

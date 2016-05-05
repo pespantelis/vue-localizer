@@ -25,11 +25,11 @@ var locales = {
 }
 
 // create an instance
-var locale = new VueLocalizer(locales)
+var localizer = new VueLocalizer(locales)
 
-// add events
-locale.beforeChange(NProgress.start)
-locale.afterChange(NProgress.done)
+// add hooks
+localizer.beforeChange(NProgress.start)
+localizer.afterChange(NProgress.done)
 
 new Vue({
   el: 'body',
@@ -58,6 +58,11 @@ new Vue({
     change (lang) {
       this.$lang.change(lang)
       this.selected = lang
+    },
+    isSelected (lang) {
+      return {
+        'is-info': this.$lang.get() === lang
+      }
     }
   }
 })

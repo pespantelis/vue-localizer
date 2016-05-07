@@ -39,7 +39,7 @@ class Localizer {
     }
 
     Object.assign(Vue.prototype.$lang, {
-      change: this.change,
+      change: this.change.bind(this),
       get: () => data.lang
     })
   }
